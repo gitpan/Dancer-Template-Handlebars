@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::Handlebars::AUTHORITY = 'cpan:YANICK';
 }
 # ABSTRACT: Wrapper for the Handlebars template system
-$Dancer::Template::Handlebars::VERSION = '0.1.0';
+$Dancer::Template::Handlebars::VERSION = '0.2.0';
 
 use strict;
 use warnings;
@@ -80,6 +80,24 @@ sub view {
     return;
 }
 
+sub layout {
+    my ($self, $layout, $tokens, $content) = @_;
+
+    my $dir = Dancer::App->current->setting('views');
+    my( $layout_name ) = grep { -e join '/', $dir, $_ }
+                          map { 'layouts/'.$_ } $self->_template_name($layout);
+
+    my $full_content;
+    if (-e join '/', $dir, $layout_name ) {
+        $full_content = Dancer::Template->engine->render(
+                                     $layout_name, {%$tokens, content => $content});
+    } else {
+        $full_content = $content;
+        Dancer::Logger::error("Defined layout ($layout) was not found!");
+    }
+    $full_content;
+}
+
 sub view_exists { 
     my( $self, $template) = @_;
 
@@ -113,7 +131,7 @@ Dancer::Template::Handlebars - Wrapper for the Handlebars template system
 
 =head1 VERSION
 
-version 0.1.0
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -173,6 +191,27 @@ Handlebars helper functions can be defined in modules, which are
 passed via C<helper_modules> in the configuration. See
 L<Dancer::Template::Handlebars::Helpers> for more details on how to register
 the functions themselves.
+
+=head2 Layouts
+
+Layouts are supported. The content of the inner template will
+be available via the 'content' variable. 
+
+Example of a perfectly valid, if slightly boring, layout:
+
+    <html>
+    <body>
+        {{ content }}
+    </body>
+    </html>
+
+=head1 SEE ALSO
+
+=over
+
+=item L<Dancer::Template::Mustache> - similar Dancer wrapper for L<Template::Mustache>.
+
+=back
 
 =head1 AUTHOR
 

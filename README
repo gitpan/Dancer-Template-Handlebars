@@ -3,7 +3,7 @@ NAME
     system
 
 VERSION
-    version 0.1.0
+    version 0.2.0
 
 SYNOPSIS
         # in config.yml
@@ -58,6 +58,22 @@ DESCRIPTION
     via "helper_modules" in the configuration. See
     Dancer::Template::Handlebars::Helpers for more details on how to
     register the functions themselves.
+
+  Layouts
+    Layouts are supported. The content of the inner template will be
+    available via the 'content' variable.
+
+    Example of a perfectly valid, if slightly boring, layout:
+
+        <html>
+        <body>
+            {{ content }}
+        </body>
+        </html>
+
+SEE ALSO
+    Dancer::Template::Mustache - similar Dancer wrapper for
+    Template::Mustache.
 
 AUTHOR
     Yanick Champoux <yanick@babyl.dyndns.org>
