@@ -4,7 +4,7 @@ Dancer::Template::Handlebars - Wrapper for the Handlebars template system
 
 # VERSION
 
-version 0.2.0
+version 0.2.1
 
 # SYNOPSIS
 

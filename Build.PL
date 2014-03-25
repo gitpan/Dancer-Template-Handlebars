@@ -18,7 +18,7 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@babyl.dyndns.org>"
   ],
   "dist_name" => "Dancer-Template-Handlebars",
-  "dist_version" => "0.2.0",
+  "dist_version" => "0.2.1",
   "license" => "perl",
   "module_name" => "Dancer::Template::Handlebars",
   "recommends" => {},

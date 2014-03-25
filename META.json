@@ -57,11 +57,11 @@
    "provides" : {
       "Dancer::Template::Handlebars" : {
          "file" : "lib/Dancer/Template/Handlebars.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       },
       "Dancer::Template::Handlebars::Helpers" : {
          "file" : "lib/Dancer/Template/Handlebars/Helpers.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       }
    },
    "release_status" : "stable",
@@ -76,7 +76,7 @@
          "web" : "https://github.com/yanick/Dancer-Template-Handlebars"
       }
    },
-   "version" : "0.2.0",
+   "version" : "0.2.1",
    "x_author_pledge" : {
       "version" : 1
    },

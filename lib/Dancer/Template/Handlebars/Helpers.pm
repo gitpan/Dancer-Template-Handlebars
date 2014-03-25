@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::Handlebars::Helpers::AUTHORITY = 'cpan:YANICK';
 }
 # ABSTRACT: parent class for Handlebars' helper collections
-$Dancer::Template::Handlebars::Helpers::VERSION = '0.2.0';
+$Dancer::Template::Handlebars::Helpers::VERSION = '0.2.1';
 
 use strict;
 use warnings;
@@ -36,7 +36,7 @@ Dancer::Template::Handlebars::Helpers - parent class for Handlebars' helper coll
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
